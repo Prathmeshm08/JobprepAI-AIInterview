@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@vapi-ai/web": "^2.3.8",
+    "firebase": "^12.0.0"
+  }
+}
