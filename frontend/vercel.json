@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://jobprepai-aiinterview.onrender.com/:path*"
+    }
+  ]
+}
