@@ -43,7 +43,6 @@ export default function RegisterPage() {
           <h2 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-blue-900 via-black to-black bg-clip-text text-transparent">
             Register to JobPrep AI
           </h2>
-
           <form onSubmit={handleRegister} className="space-y-6">
             <input
               type="email"
@@ -53,7 +52,6 @@ export default function RegisterPage() {
               required
               className="w-full px-4 py-2 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-400"
             />
-
             <input
               type="string"
               placeholder="Password"
@@ -62,17 +60,14 @@ export default function RegisterPage() {
               required
               className="w-full px-4 py-2 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-400"
             />
-
             {errorMsg && <p className="text-red-600 text-sm text-center">{errorMsg}</p>}
             {successMsg && <p className="text-green-600 text-sm text-center">{successMsg}</p>}
-
             <button
               type="submit"
               className="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold shadow-md"
             >
               Register
             </button>
-
             <p className="mt-4 text-center text-sm">
               Already have an account?{" "}
               <Link to="/login" className="text-blue-500 underline hover:text-blue-700">

@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Sun, Moon } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import logo from "../assets/logo.png";
@@ -8,13 +7,11 @@ import BackgroundImage from "../components/BackgroundImage";
 
 
 export default function WelcomePage() {
-  const [darkMode, setDarkMode] = React.useState(false);
-
   return (
     <>
       <BackgroundImage />
 
-      <div className={`${darkMode ? "text-white" : "text-gray-900"} relative z-10 min-h-screen flex flex-col justify-between transition-colors duration-500`}>
+      <div className="text-gray-900 relative z-10 min-h-screen flex flex-col justify-between transition-colors duration-500">
 
         {/* Header with logo and title */}
         <header className="flex justify-between items-center p-6">
@@ -30,24 +27,12 @@ export default function WelcomePage() {
 </h1>
 
           </motion.div>
-
-          <motion.button
-            onClick={() => setDarkMode(!darkMode)}
-            whileHover={{ rotate: 90 }}
-            className="p-2 transition-transform"
-          >
-            {darkMode ? <Sun /> : <Moon />}
-          </motion.button>
         </header>
 
         {/* Main Content */}
         <main className="flex flex-col items-center justify-center flex-grow text-center px-4">
           <motion.h2
-            className={`text-4xl font-extrabold mb-4 ${
-              darkMode
-                ? "bg-gradient-to-r from-pink-400 via-white to-blue-500 bg-clip-text text-transparent"
-                : "text-white"
-            }`}
+            className="text-4xl font-extrabold mb-4 bg-gradient-to-r from-pink-400 via-purple-500 to-blue-500 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
