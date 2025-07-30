@@ -2,6 +2,8 @@ from flask import Blueprint, request, jsonify
 import os
 import fitz  # PyMuPDF
 from vapi.client import start_call
+import openai
+import json
 
 upload_bp = Blueprint('upload', __name__)
 
@@ -27,6 +29,34 @@ def upload_resume():
 
         text = extract_text_from_pdf(filepath)
 
+        # --- NEW: Use OpenAI for ATS scoring ---
+        openai_api_key = os.getenv('OPENAI_API_KEY')
+        prompt = f"""
+You are an expert ATS (Applicant Tracking System) evaluator. Analyze the following resume text and provide an ATS compatibility score out of 100, based on keyword relevance, skills, formatting, and overall match for a generic software/IT job. Only respond with a JSON object like: {{"score": <score out of 100>, "reason": "<short explanation>"}}
+
+RESUME TEXT:
+{text}
+"""
+        score = 0
+        reason = ""
+        if openai_api_key:
+            openai.api_key = openai_api_key
+            try:
+                response = openai.ChatCompletion.create(
+                    model="gpt-3.5-turbo",
+                    messages=[{"role": "user", "content": prompt}],
+                    max_tokens=200,
+                    temperature=0.3
+                )
+                ai_result = json.loads(response.choices[0].message['content'])
+                score = ai_result.get("score", 0)
+                reason = ai_result.get("reason", "")
+            except Exception as e:
+                reason = f"OpenAI API error: {e}"
+        else:
+            reason = "No OpenAI API key found."
+
+        # Use the same question generation logic as provided
         skill_keywords = ['Python', 'Java', 'SQL', 'AI', 'ML', 'Communication', 'Teamwork']
         project_keywords = ['chatbot', 'recommendation', 'detection', 'prediction', 'automation']
         cert_keywords = ['Coursera', 'NPTEL', 'Udemy', 'AWS', 'Azure', 'Google']
@@ -37,9 +67,6 @@ def upload_resume():
         found_certs = [kw for kw in cert_keywords if kw.lower() in text.lower()]
         found_extras = [kw for kw in extra_keywords if kw.lower() in text.lower()]
 
-        score = int((len(found_skills) / len(skill_keywords)) * 100)
-
-        # Use the same question generation logic as provided
         questions = []
         for skill in found_skills:
             questions.append(f"How have you applied {skill} in your work or academics?")
@@ -65,6 +92,7 @@ def upload_resume():
 
         return jsonify({
             'score': score,
+            'reason': reason,
             'skills': found_skills,
             'projects': found_projects,
             'certifications': found_certs,

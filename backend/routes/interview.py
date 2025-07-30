@@ -28,7 +28,6 @@ def ask_questions():
     username = data.get('userName', 'Candidate')
     user_id = data.get('userId', 'unknown')
 
-    # Generate questions (same logic as /generate-questions)
     questions = []
     for skill in skills:
         questions.append(f"How have you applied {skill} in your work or academics?")
@@ -46,7 +45,6 @@ def ask_questions():
     ]
     questions = questions[:15]
 
-    # Send questions to Vapi
     vapi_result = start_call(user_id, username, questions)
     return jsonify({"questions": questions, "vapi": vapi_result}) 
 

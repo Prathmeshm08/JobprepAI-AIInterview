@@ -19,9 +19,7 @@ export default function ResumeUploadPage() {
 
     const formData = new FormData();
     formData.append('resume', resume);
-    // Optionally add user info here if available
-    // formData.append('userId', userId);
-    // formData.append('userName', userName);
+   
 
     try {
       const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/upload`, {
