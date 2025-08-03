@@ -1,54 +1,91 @@
-﻿# JobprepAI-AIInterview
+# 💼 JobPrepAI – AI-Powered Technical Interview & Placement Prep Platform
 
-🚀 Just Built:
-JobPrep AI:  AI-Powered Technical Interview Practice & Placement Prep Platform
-A powerful full-stack web application that transforms technical interview prep by combining AI-driven mock interviews, real-time feedback, LeetCode-style coding problems, and comprehensive placement resources — all in one place.
+🚀 **Just Built:**  
+**JobPrepAI** is a powerful full-stack web application that transforms technical interview preparation by combining **AI-driven mock interviews**, **real-time feedback**, **LeetCode-style coding questions**, and **comprehensive placement resources** — all in one place.
 
-🎯 Why I Built This
-Cracking technical interviews requires more than just practice — it demands realistic mock sessions, targeted problem-solving, and structured feedback. Many platforms focus on one area only. I built this platform to offer a complete, personalized, and data-driven preparation journey for aspiring developers and job seekers.
+---
 
-💡 What It Does
-🎤 AI-Driven Voice Interviews
-Real-time voice conversations with AI agents using Vapi AI, simulating domain-specific interviews for realistic experiences.
-📊 Instant AI Evaluation
-Intelligent scoring across communication, clarity, and technical knowledge, with actionable feedback and tips.
-📄 ATS Resume Scoring
-Analyze your resume using OpenAI GPT-3.5-turbo to evaluate ATS compatibility, keyword usage, and areas for improvement.
-👨‍💻 LeetCode-Style Coding Practice
-Clicking on a company name reveals a curated list of coding questions specifically asked by that company (e.g., Google, Amazon, Microsoft), allowing users to directly access and practice relevant problems.
-📚 Placement Preparation Materials
-Includes downloadable study guides, HR questions, Aptitude preparation and more — everything needed for campus and off-campus placements.
-📈 Modern Dashboard
-Visual analytics dashboard showing past interview scores, coding progress, and feedback trends.
+## 🎯 Why I Built This
 
-⚙ Tech Stack & Architecture:
+Cracking technical interviews requires more than just practice — it demands realistic mock sessions, targeted problem-solving, and structured feedback.  
+Many platforms focus on just one area. **JobPrepAI** was built to deliver a **complete**, **personalized**, and **data-driven** preparation journey for developers and job seekers.
 
-Frontend: React.js, TailwindCSS, Framer Motion, React Router
-Backend: Flask (Python), Firebase Auth & Firestore
-AI Integration: OpenAI GPT-3.5-turbo, Vapi AI for voice interviews
-Real-time: WebSockets, live voice streaming
-File Processing: PyMuPDF for PDF resume parsing
-Deployment: Vercel (Frontend), Render (Backend)
+---
 
-✅ Key Features:
+## 💡 What It Does
 
-🔒 Secure Authentication: Firebase Auth with protected routes
-🎙 Live AI Interviews: Seamless real-time voice interactions
-📊 Detailed Feedback System: Multi-dimensional scoring and suggestions
-📝 Resume Optimization: ATS resume scoring and guidance
-👨‍💻 Company-Specific Coding Prep: LeetCode-style questions tailored for top companies
-📂 Complete Placement Resources: Covers technical, HR, and theory prep materials
-📈 Progress Tracking: Full session history and performance insights
-📱 Responsive UI: Mobile-first layout with smooth animations
+- 🎤 **AI-Driven Voice Interviews**  
+  Real-time voice conversations with AI agents using **Vapi AI**, simulating domain-specific interview scenarios.
 
-🧪 This Project Demonstrates:
+- 📊 **Instant AI Evaluation**  
+  Scoring based on communication, clarity, and technical skills — with actionable, personalized feedback.
 
-🔹 Full-stack app development
-🔹 Practical AI integration
-🔹 Real-time WebSocket voice features
-🔹 Resume parsing and NLP scoring
-🔹 End-to-end placement prep ecosystem
-🔹 Mobile-friendly UX with accessibility focus
+- 📄 **ATS Resume Scoring**  
+  Upload your resume and get ATS compatibility scoring powered by **OpenAI GPT-3.5-turbo** with keyword analysis and suggestions.
 
-🌐 🔗 Project Link / Demo:
-https://jobprepai-ai-interview.vercel.app/
+- 👨‍💻 **LeetCode-Style Coding Practice**  
+  Click on a company name to view a curated list of real coding questions asked by companies like Google, Amazon, Microsoft, and more.
+
+- 📚 **Placement Preparation Materials**  
+  Includes downloadable guides for HR questions, aptitude preparation, DBMS/OS/Networking, system design, and more.
+
+- 📈 **Modern Dashboard**  
+  Visualize past interview scores, feedback, and coding progress — all in a centralized user dashboard.
+
+---
+
+## ⚙ Tech Stack & Architecture
+
+**Frontend:**  
+`React.js`, `TailwindCSS`, `Framer Motion`, `React Router`
+
+**Backend:**  
+`Flask (Python)`, `Firebase Auth`, `Firestore (NoSQL)`
+
+**AI Integration:**  
+`OpenAI GPT-3.5-turbo`, `Vapi AI` for voice interactions
+
+**Real-Time:**  
+`WebSockets`, `Live Voice Streaming`
+
+**Resume Processing:**  
+`PyMuPDF` for PDF parsing and keyword extraction
+
+**Deployment:**  
+Frontend on `Vercel`, Backend on `Render`
+
+---
+
+## ✅ Key Features
+
+- 🔐 **Secure Authentication** (Firebase Auth with protected routes)
+- 🎙 **Live AI Interviews** (Seamless real-time voice interactions)
+- 📊 **Detailed Feedback System** (Multi-dimensional scoring & improvement tips)
+- 📝 **Resume Optimization** (ATS scoring and improvement suggestions)
+- 👨‍💻 **Company-Specific Coding Questions**
+- 📂 **Placement Resource Center** (Downloadable study material)
+- 📈 **Progress Tracking** (Session history, performance analytics)
+- 📱 **Mobile-Responsive UI** with beautiful animations
+
+---
+
+## 🧪 This Project Demonstrates
+
+- 🔹 Full-stack application development
+- 🔹 Integration of cutting-edge AI services
+- 🔹 Real-time features with WebSockets & voice processing
+- 🔹 Natural Language Processing for resume evaluation
+- 🔹 Scalable and responsive architecture
+- 🔹 Accessibility-first UI with smooth UX
+
+---
+
+## 🌐 Live Demo
+
+🔗 **[Try the Platform Now](https://jobprepai-ai-interview.vercel.app/)**
+
+---
+
+## 📬 Let's Connect
+
+If you're interested in contributing, collaborating, or discussing similar AI-powered platforms — feel free to reach out! 💬
